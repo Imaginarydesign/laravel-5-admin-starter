@@ -19,7 +19,18 @@
 <![endif]-->
 </head>
 <body class="skin-blue sidebar-mini">
+    
+    <!-- Just a preview. Delete this and uncomment the lines below -->
+    <div class="wrapper">
+        @include('partials.navbar')
+        @include('partials.sidebar')
+        @yield('content')
+        @include('partials.footer')
+        @include('partials.right-sidebar')
+    </div><!-- /wrapper -->
 
+    <!-- Uncomment the lines below -->
+    <?php /*
     <!-- If user logged in -->
     @if (!Auth::guest())
     <div class="wrapper">
@@ -39,6 +50,7 @@
         </div>
     </div>
     @endif
+    */ ?>
 
 <!-- Global Scripts -->
 <script src="/js/app.js"></script>

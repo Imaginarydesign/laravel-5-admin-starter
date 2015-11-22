@@ -3,5 +3,8 @@
   "dependencies": {
     "admin-lte.scss": "~3.1.2",
     "font-awesome": "~4.4.0"
+  },
+  "devDependencies": {
+    "Ionicons": "ionicons#~2.0.1"
   }
 }

@@ -16,6 +16,7 @@ elixir(function(mix) {
       './bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss',
       './bower_components/admin-lte.scss/main.scss',
       './bower_components/font-awesome/scss/font-awesome.scss',
+      './bower_components/Ionicons/scss/ionicons.scss',
       'app.scss'
     ], 'public/css/app.css');
     mix.scripts([
@@ -27,5 +28,6 @@ elixir(function(mix) {
     mix.copy([
       'bower_components/bootstrap-sass-official/assets/fonts/bootstrap',
       'bower_components/font-awesome/fonts',
+      'bower_components/Ionicons/fonts',
       ], 'public/fonts');
 });
