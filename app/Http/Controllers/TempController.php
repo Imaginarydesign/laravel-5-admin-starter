@@ -15,7 +15,7 @@ class TempController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     private $page_heading = 'Temp';
