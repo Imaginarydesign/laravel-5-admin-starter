@@ -9,7 +9,6 @@
 			</div>
 			<div class="pull-left info">
 				<p>Alexander Pierce</p>
-
 				<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 			</div>
 		</div>
@@ -26,26 +25,24 @@
 		<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
 			<li class="header">MAIN NAVIGATION</li>
-			<li class="treeview">
-				<a href="#">
+			<li class="treeview {{ Request::is('home') ? 'active' : '' }}">
+				<a href="/home">
 					<i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 			</li>
-			<li class="treeview">
+			<li class="treeview {{ Request::is('temp*') ? 'active' : '' }}">
 				<a href="#">
 					<i class="fa fa-files-o"></i>
-					<span>Layout Options</span>
+					<span>Resource</span>
 					<span class="label label-primary pull-right">4</span>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-					<li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-					<li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-					<li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+					<li><a href="{{ url('/temp') }}"><i class="fa fa-circle-o"></i> Index</a></li>
+					<li><a href="{{ url('/temp/1/edit') }}"><i class="fa fa-circle-o"></i> Form</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="../widgets.html">
+				<a href="#">
 					<i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">Hot</small>
 				</a>
 			</li>            

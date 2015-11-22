@@ -16,6 +16,15 @@ Start creating your amazing application!
 4. bower install
 5. gulp
 
+## Usage
+
+1. Create a database
+2. Rename .env.example to .env
+3. Update database details in .env
+4. run `php artisan migrate`
+5. Create a user in database/seeds/UserTableSeeder.php
+6. run `php artisan db:seed`
+
 ## Features
 
 - Laravel 5
