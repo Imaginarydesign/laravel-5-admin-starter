@@ -12,9 +12,10 @@ Start creating your amazing application!
 
 1. Clone it
 2. cd into it
-3. npm install
-4. bower install
-5. gulp
+3. composer install
+4. npm install
+5. bower install
+6. gulp
 
 ## Usage
 
