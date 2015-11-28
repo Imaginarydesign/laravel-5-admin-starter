@@ -8,7 +8,7 @@
 				<img src="{{ url('images/man.png') }}" class="img-circle" alt="User Image" />
 			</div>
 			<div class="pull-left info">
-				<p>Alexander Pierce</p>
+				<p>{{ Auth::user()->name }}</p>
 				<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 			</div>
 		</div>
@@ -34,11 +34,11 @@
 				<a href="#">
 					<i class="fa fa-files-o"></i>
 					<span>Resource</span>
-					<span class="label label-primary pull-right">4</span>
+					<span class="label label-primary pull-right">{{ count(App\Temp::all()) }}</span>
 				</a>
 				<ul class="treeview-menu">
 					<li><a href="{{ url('/temp') }}"><i class="fa fa-circle-o"></i> Index</a></li>
-					<li><a href="{{ url('/temp/1/edit') }}"><i class="fa fa-circle-o"></i> Form</a></li>
+					<li><a href="{{ url('/temp/create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
 				</ul>
 			</li>
 			<li>

@@ -103,14 +103,14 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{ url('images/man.png') }}" class="user-image" alt="User Image"/>
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs">{{ Auth::user()->name }}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <img src="{{ url('images/man.png') }}" class="img-circle" alt="User Image" />
               <p>
-                Alexander Pierce - Web Developer
+                {{ Auth::user()->name }}
                 <small>Member since Nov. 2012</small>
               </p>
             </li>
@@ -138,9 +138,9 @@
           </ul>
         </li>
         <!-- Control Sidebar Toggle Button -->
-        <li>
+        <!-- <li>
           <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>

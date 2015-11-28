@@ -2,8 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
+use App\Temp;
 
 class TempController extends Controller
 {
@@ -28,8 +28,10 @@ class TempController extends Controller
      */
     public function index()
     {
-        $data['page_heading'] = $this->page_heading;
+        $temps = Temp::all();
 
+        $data['page_heading'] = $this->page_heading;
+        $data['temps'] = $temps;
         return view($this->views . '.' . 'index', $data);
     }
 
@@ -40,7 +42,9 @@ class TempController extends Controller
      */
     public function create()
     {
-        //
+        $data['page_heading'] = $this->page_heading;
+        $data['create'] = true;
+        return view($this->views . '.' . 'form', $data);
     }
 
     /**
@@ -50,7 +54,10 @@ class TempController extends Controller
      */
     public function store()
     {
-        //
+        $input = \Request::all();
+        Temp::create($input);
+        \Session::flash('flash_message', 'Temp created');
+        return redirect()->action('TempController@index');
     }
 
     /**
@@ -72,21 +79,29 @@ class TempController extends Controller
      */
     public function edit($id)
     {
-        //
-        $data['page_heading'] = $this->page_heading;
+        $temp = Temp::findOrFail($id);
 
-        return view($this->views . '.' . 'edit', $data);
+        $data = [];
+        $data['temp'] = $temp;
+        $data['page_heading'] = $this->page_heading;
+        $data['create'] = false;
+        return view($this->views . '.' . 'form', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return Redirect
      */
     public function update($id)
     {
-        //
+        $input = \Request::all();
+        $temp = Temp::findOrFail($id);
+        $temp->update($input);
+        \Session::flash('flash_message', 'Temp updated');
+
+        return redirect()->action('TempController@index');
     }
 
     /**
