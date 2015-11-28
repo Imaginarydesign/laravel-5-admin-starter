@@ -12,10 +12,11 @@ Start creating your amazing application!
 
 1. Clone it
 2. cd into it
-3. composer install
-4. npm install
-5. bower install
-6. gulp
+3. `composer install`
+4. `php artisan key:generate`
+5. `npm install`
+6. `bower install`
+7. `gulp`
 
 ## Usage
 
