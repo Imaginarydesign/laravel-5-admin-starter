@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Temp;
+use App\Http\Requests\StoreTempRequest as StoreTempRequest;
 
 class TempController extends Controller
 {
@@ -52,9 +53,11 @@ class TempController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(StoreTempRequest $request)
     {
+
         $input = \Request::all();
+        
         Temp::create($input);
         \Session::flash('flash_message', 'Temp created');
         return redirect()->action('TempController@index');
@@ -94,9 +97,10 @@ class TempController extends Controller
      * @param  int  $id
      * @return Redirect
      */
-    public function update($id)
+    public function update($id, StoreTempRequest $request)
     {
         $input = \Request::all();
+
         $temp = Temp::findOrFail($id);
         $temp->update($input);
         \Session::flash('flash_message', 'Temp updated');

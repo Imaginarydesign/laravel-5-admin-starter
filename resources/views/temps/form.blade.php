@@ -46,13 +46,13 @@
                             <div class="form-group">
                                 <label for="status" class="col-sm-2 control-label">Status*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="status" id="status" placeholder="Status" value="{{ $create ? old('status') : $temp->status }}">
+                                    <input type="text" class="form-control" name="status" id="status" placeholder="Status" value="{{ $create ? old('status') : $temp->status }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="reason" class="col-sm-2 control-label">Reason</label>
+                                <label for="reason" class="col-sm-2 control-label">Reason*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="reason" id="reason" placeholder="Reason" value="{{ $create ? old('reason') : $temp->reason }}">
+                                    <input type="text" class="form-control" name="reason" id="reason" placeholder="Reason" value="{{ $create ? old('reason') : $temp->reason }}" required>
                                 </div>
                             </div>
                         </div><!-- /.box-body -->
