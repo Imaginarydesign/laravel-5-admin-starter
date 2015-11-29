@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Temp;
+
 class HomeController extends Controller
 {
 
@@ -31,6 +33,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $temps = Temp::all();
+
+        $data['temps'] = $temps;
+
+        return view('home', $data);
     }
 }
