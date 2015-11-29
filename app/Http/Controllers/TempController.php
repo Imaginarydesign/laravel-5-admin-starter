@@ -29,7 +29,12 @@ class TempController extends Controller
      */
     public function index()
     {
-        $temps = Temp::all();
+        $temps = Temp::select([
+          'id',
+          'name',
+          'status',
+          'reason'
+          ])->paginate(5);
 
         $data['page_heading'] = $this->page_heading;
         $data['temps'] = $temps;
