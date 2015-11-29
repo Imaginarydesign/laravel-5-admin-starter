@@ -58,7 +58,7 @@
                                         <td>{{ $temp->reason }}</td>
                                         <td class="text-right">
                                             <a href="{{ action('TempController@edit', $temp->id) }}" class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="btn btn-sm btn-danger" ><i class="fa fa-times"></i></a>
+                                            <a href="javascript:deleteTemp({{$temp->id}});" class="btn btn-sm btn-danger" ><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -76,8 +76,40 @@
                 </div><!-- /.box -->
             </div>
         </div>
+        @include('partials.loading')
     </section>
 
 </div>
+
+@endsection
+
+@section('scripts')
+
+<script type="text/javascript">
+
+// Delete temp
+function deleteTemp(id) {
+
+if (confirm('Really delete?')) {
+    $("#loading").show('slow');
+    var token = "{!!  csrf_token()   !!}";
+    var temp = id;
+    console.log(temp);
+    $.ajax({
+      type: "POST",
+      data: {_token: token, id: id, _method:"DELETE"},
+      url: '/temp/' + id,
+      success: function(result) {
+        window.location = 'temp';
+        $('.content-wrapper').prepend('<section class="content-header"><div class="row"><div class="col-md-12"><div class="alert alert-success">'+ result.message +'</div></div></div></section>');
+      },
+      complete: function(){
+        $("#loading").hide('slow');
+      }
+    });
+  }
+}
+
+</script>
 
 @endsection

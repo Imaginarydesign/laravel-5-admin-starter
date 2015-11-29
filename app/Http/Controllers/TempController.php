@@ -121,6 +121,10 @@ class TempController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $temp = Temp::findOrFail($id);
+        $temp->delete();
+        return [
+            'message' => 'Temp has been deleted.'
+        ];
     }
 }

@@ -20,19 +20,7 @@
 </head>
 <!-- Options: black, blue, green, purple, red, yellow and light versions eq. black-light -->
 <body class="skin-blue sidebar-mini" style="{{ Auth::guest() ? 'padding-top: 50px;' : '' }}">
-    
-    <!-- Just a preview. Delete this and uncomment the lines below -->
-    <?php /*
-    <div class="wrapper">
-        @include('partials.navbar')
-        @include('partials.sidebar')
-        @yield('content')
-        @include('partials.footer')
-        @include('partials.right-sidebar')
-    </div>
-    */ ?>
 
-    <!-- Uncomment the lines below -->
     <!-- If user logged in -->
     @if (!Auth::guest())
     <div class="wrapper">
