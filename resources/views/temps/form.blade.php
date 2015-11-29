@@ -60,7 +60,7 @@
                             <input type="hidden" name="id" value="{{ $temp->id }}">
                         @endif
                         <div class="box-footer">
-                            <a href="{{ url('/temp') }}" class="btn btn-default" >Cancel</a>
+                            <a href="{{ URL::previous() }}" class="btn btn-default" >Cancel</a>
                             <button type="submit" class="btn btn-info pull-right">Save</button>
                         </div><!-- /.box-footer -->
                     </form>
