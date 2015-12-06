@@ -5,7 +5,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-    @include('partials.flash')
+    @include('flash::message')
 
     <!-- Content Header (Page header) -->
     <section class="content-header">

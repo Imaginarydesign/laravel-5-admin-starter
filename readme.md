@@ -35,6 +35,7 @@ Start creating your amazing application!
 - Bower
 - Font Awesome
 - jQuery
+- Laracasts/Flash
 
 ## Contributing
 
