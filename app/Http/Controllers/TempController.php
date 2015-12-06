@@ -64,7 +64,9 @@ class TempController extends Controller
         $input = \Request::all();
         
         Temp::create($input);
-        \Session::flash('flash_message', 'Temp created');
+
+        flash()->success('Temp created');
+
         return redirect()->action('TempController@index');
     }
 
@@ -108,7 +110,8 @@ class TempController extends Controller
 
         $temp = Temp::findOrFail($id);
         $temp->update($input);
-        \Session::flash('flash_message', 'Temp updated');
+
+        flash()->success('Temp updated');
 
         return redirect()->action('TempController@index');
     }
