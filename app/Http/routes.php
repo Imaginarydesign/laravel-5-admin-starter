@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 
 // Temporary resource
 Route::resource('temp', 'TempController');
+Route::resource('settings', 'SettingsController');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
