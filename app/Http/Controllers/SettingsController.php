@@ -4,9 +4,23 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Setting;
+use Mail;
 
 class SettingsController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    private $page_heading = 'Setting';
+    private $views = 'settings';
 
     /**
      * Display a listing of the resource.
@@ -15,11 +29,15 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        $settings = Setting::get('adress');
-        dd($settings);
+        // $settings = Setting::get('adress');
 
-        Setting::set('foo', 'bar');
-        Setting::save();
+        // Setting::set('foo', 'bar');
+        // Setting::save();
+        
+        $data['page_heading'] = $this->page_heading;
+        $data['name'] = Setting::get('name');
+
+        return view($this->views . '.' . 'form', $data);
     }
 
     /**
@@ -39,7 +57,14 @@ class SettingsController extends Controller
      */
     public function store()
     {
-        //
+        $input = \Request::all();
+
+        Setting::set('name', $input['name']);
+        Setting::save();
+
+        flash()->success('Settings updated');
+
+        return redirect()->action('SettingsController@index');
     }
 
     /**
