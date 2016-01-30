@@ -13,8 +13,6 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass([
-      './bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss',
-      './bower_components/admin-lte.scss/main.scss',
       './bower_components/font-awesome/scss/font-awesome.scss',
       './bower_components/Ionicons/scss/ionicons.scss',
       'app.scss'

@@ -1,3 +1,10 @@
+$icon-font-path: '../fonts/';
+
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/admin-lte.scss/scss/admin-lte";
+@import "bower_components/admin-lte.scss/scss/skins/all-skins";
+
+
 #loading {
   background: rgba(255,255,255,0.9);
   z-index: 9999;

@@ -145,6 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
+        'anlutro\LaravelSettings\ServiceProvider',
 
 	],
 
@@ -194,6 +195,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'Flash'     => 'Laracasts\Flash\Flash',
+        'Setting'   => 'anlutro\LaravelSettings\Facade',
 
 	],
 
