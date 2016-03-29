@@ -1,6 +1,10 @@
 # Laravel 5 Starter
 
-Start creating your amazing application!
+Laravel 5 Admin Starter Site is a sample application for beginning development with Laravel 5. 
+
+I created this starter app as I needed a simple framework for an internal database-backed Web application.
+
+![Laravel 5 Admin Starter](https://github.com/Imaginarydesign/laravel-5-admin-starter/raw/master/image.png)
 
 ## Requirements
 
