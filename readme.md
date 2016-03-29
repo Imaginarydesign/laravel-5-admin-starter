@@ -48,4 +48,4 @@ Start creating your amazing application!
 
 ## License
 
-TODO: Write license
+Laravel 5 Admin Starter is licensed under the MIT license. (http://opensource.org/licenses/MIT)
